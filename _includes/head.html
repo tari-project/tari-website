@@ -1,0 +1,59 @@
+{% if page.include_ascii %}
+{% include ascii_art.html %}
+{% endif %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{% unless page.title contains "Tari" %}{{ page.title }} | Tari{% else %}{{ page.title }}{% endunless %}</title>
+
+<meta property="og:description" content="{{ site.description }}" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:image" content="{{ site.url }}/{{ site.cover }}" />
+<meta property="og:image:secure_url" content="{{ site.url }}/{{ site.cover }}" />
+<meta property="og:type" content="{{ site.type }}" />
+  
+<meta name="description" content="{{ site.description }}" />
+<meta itemprop="name" content="{{ site.name }}"/>
+<meta itemprop="title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}" />
+<meta itemprop="url" content="{{ site.url }}{{ page.url }}"/>
+<meta itemprop="thumbnailUrl" content="{{ site.url }}/{{ site.cover }}"/>
+<meta itemprop="image" content="{{ site.url }}/{{ site.cover }}" />
+<link rel="image_src" href="{{ site.url }}/{{ site.cover }}" />
+  
+<meta name="twitter:site" content="{{ site.name }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}"/>
+<meta name="twitter:url" content="{{ site.url }}{{ page.url }}"/>
+<meta name="twitter:image" content="{{ site.url }}/{{ site.cover }}"/>
+<meta name="twitter:card" content="summary"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ site.baseurl }}/css/owl.carousel.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/avenir-std.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/airspace.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/ionicons.min.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/animate.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/responsive.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css" />
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/js/owl.carousel.min.js"></script>
+<script src="{{ site.baseurl }}/js/plugins.js"></script>
+<script src="{{ site.baseurl }}/js/min/rellax.min.js"></script>
+<script src="{{ site.baseurl }}/js/min/waypoints.min.js"></script>
+<script src="{{ site.baseurl }}/js/jquery.counterup.js"></script>
+
+<script src="{{ site.baseurl }}/js/main.js"></script>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b04a80b744e1cff"></script>
+
+{% include analytics.html %}

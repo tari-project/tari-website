@@ -1,0 +1,11 @@
+.idea
+*.iml
+_site
+.sass-cache
+.jekyll-metadata
+*.DS_Store
+deploy.yaml
+vendor
+.bundle
+*.ipynb
+.ipynb_checkpoints

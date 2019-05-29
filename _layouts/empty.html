@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+    {% if page.css %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/{{ page.css }}" />
+    {% endif %}
+</head>
+<body class="page-{{ page.name | replace: '.html', '' }}">
+
+{{ content }}
+
+</body>
+</html>

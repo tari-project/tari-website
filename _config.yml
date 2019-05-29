@@ -1,0 +1,45 @@
+
+exclude:
+  - "/vendor/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "LICENSE.md"
+  - "*.gemspec"
+  - "deploy*"
+  - "*.ipynb"
+  - "Makefile"
+
+keep_files:
+  - "CNAME"
+  - ".git"
+  - ".gitignore"
+
+
+# Site settings
+name: Tari
+description: "Tari is a new open source, decentralized protocol that reimagines the future of digital assets."
+url: "https://www.tari.com" # the base hostname & protocol for your site
+baseurl: ""
+email: "hello@tari.io"
+type: "website"
+cover: "tari-splash.png"
+
+# Build settings
+markdown: kramdown
+
+# Google analytics
+ga_tracking_id: "UA-115476091-1"
+
+# Category descriptions (for archive pages)
+descriptions:
+  - cat: jekyll
+    desc: "Posts describing Jekyll setup techniques."
+
+  - cat: dummy
+    desc: "Just some placeholder posts, lorem ipsum and the rest."
+
+# These are additional content folders that Jekyll needs to be aware of
+collections:
+- sections
+- faq

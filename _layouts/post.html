@@ -1,0 +1,55 @@
+---
+layout: page
+title: {{ page.title | append: "| Tari" }}
+---
+
+<div class="post">
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+
+      <div class="post-img" style="background-image:url({% if page.thumbnail %}{{ site.baseurl }}/{{ page.thumbnail }}{% else %}{{ site.baseurl }}/img/posts/placeholder-thumbnail.jpg{% endif %})">
+          <img src="{{ site.baseurl }}/img/posts/placeholder-spacer.gif" />
+      </div>
+
+      <div class="post-head">
+        <h1>{{ page.title }}</h1>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="post-meta">
+              {% if page.author %}<strong class="post-author">{{ page.author }}</strong>{% endif %}
+              <p class="post-date">{{ page.date | date: '%B %d, %Y' }}</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="addthis_inline_share_toolbox"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wrapper Start -->
+      <section id="post">
+        <div class="block">
+          {% if page.subtitle %}<div class="lead"><h2>{{ page.subtitle }}</h2></div>{% endif %}
+          {{ content }}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Call to action Start -->
+<section id="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <a class="btn btn-lg" href="{{ site.baseurl }}/blog">Back to blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+<!-- Slider Start -->
+<section id="global-header">
+  <div class="container">
+      <h1>From the Blog</h1>
+  </div>
+</section>
+
+<!-- Posts Start -->
+<section id="posts" data-size="{{ site.posts.size }}">
+  <div class="container">
+  <div class="row js-stagger-delay js-add-class-in-view" data-stagger-selector=".js-stagger-delay-post-panel"
+    data-stagger-property="animation"
+    data-stagger-interval=".1408"
+    data-stagger-direction="forwards"
+    data-in-view-count="1"
+    data-in-view-offset="75%">
+
+  {% for post in site.posts %}
+    
+    {% include post-area.html %}
+
+  {% endfor %}
+
+  </div>
+  </div>
+</section>

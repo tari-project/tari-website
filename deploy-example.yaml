@@ -1,0 +1,12 @@
+default:
+  root: '_site/'
+
+production:
+  key: 'XXX'
+  secret: 'XXX'
+  bucket: 'www.tari.com'
+
+development:
+  key: 'XXX'
+  secret: 'XXX'
+  bucket: 'XXX.tari.com'

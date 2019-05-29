@@ -1,0 +1,58 @@
+---
+layout: page
+title: Frequently Asked Questions
+permalink: /faq/
+---
+
+<!-- Slider Start -->
+<section id="global-header">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+  </div>
+</section>
+
+<!-- FAQ Start -->
+<section id="faqs">
+  <div class="container">
+    <div class="row">
+      <div class="panel-group clearfix" id="accordion">
+          <div class="col-sm-6">
+            {% for q in site.data.faqs %}
+              {% assign value = forloop.index | modulo:2 %}
+              {% if value == 1 %}
+            <div class="panel-wrapper">
+              <div class="panel">
+                <div class="panel-heading">
+                    <h4><a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.index }}" class="collapsed">{{ q.question | markdownify }}</a></h4>
+                </div>
+                <div id="collapse{{ forloop.index }}" class="panel-collapse collapse">
+                    {{ q.answer | markdownify }}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+            {% endfor %}
+          </div>
+          <div class="col-sm-6">
+            {% for q in site.data.faqs %}
+              {% assign value = forloop.index | modulo:2 %}
+              {% if value == 0 %}
+            <div class="panel-wrapper">
+              <div class="panel">
+                <div class="panel-heading">
+                    <h4><a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.index }}" class="collapsed">{{ q.question | markdownify }}</a></h4>
+                </div>
+                <div id="collapse{{ forloop.index }}" class="panel-collapse collapse">
+                    {{ q.answer | markdownify }}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+            {% endfor %}
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

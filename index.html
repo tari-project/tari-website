@@ -1,0 +1,155 @@
+---
+layout: page
+title: Tari - Digital assets focused blockchain protocol
+permalink: /
+---
+
+<!-- Slider Start -->
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="block">
+                <div class="col-md-4 visible-md visible-lg">{% include svg-gem.html %}</div>
+                <div class="col-md-8"><h1>{{ site.description }}</h1></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sections Start -->
+<section id="sections">
+<div class="rellax-wrapper">
+{% for section in site.sections %}
+{% if section.id contains "home_section" %}
+<!-- Wrapper Start -->
+<section id="{{ section.id }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="block">
+                    <div class="parallax-viewport js-stagger-delay js-add-class-in-view" data-stagger-selector=".js-stagger-delay-parallax-panel-{{ forloop.index }}"  style="background-image:url({{ site.baseurl }}/{{ section.image | replace: '.png', '_1.png' }})"
+                            data-stagger-property="animation"
+                            data-stagger-interval=".4224"
+                            data-stagger-direction="forwards"
+                            data-in-view-count="1"
+                            data-in-view-offset="75%">
+                        <div class="bg2 parallax-layer js-stagger-delay-parallax-panel-{{ forloop.index }} js-add-class-in-view" data-in-view-count="{{ forloop.index }}" data-in-view-offset="75%" data-rellax-speed="-.5" data-rellax-percentage="0.5" data-rellax-zindex="2">
+                            <img src="{{ site.baseurl }}/{{ section.image | replace: '.png', '_2.png' }}" />
+                        </div>
+                        <div class="bg3 parallax-layer js-stagger-delay-parallax-panel-{{ forloop.index }} js-add-class-in-view" data-in-view-count="{{ forloop.index }}" data-in-view-offset="75%" data-rellax-speed="0" data-rellax-percentage="0.5" data-rellax-zindex="3">
+                            <img src="{{ site.baseurl }}/{{ section.image | replace: '.png', '_3.png' }}" />
+                        </div>
+                        <div class="bg4 parallax-layer js-stagger-delay-parallax-panel-{{ forloop.index }} js-add-class-in-view" data-in-view-count="{{ forloop.index }}" data-in-view-offset="75%" data-rellax-speed=".5" data-rellax-percentage="0.5" data-rellax-zindex="4">
+                            <img src="{{ site.baseurl }}/{{ section.image | replace: '.png', '_4.png' }}" />
+                        </div>
+                        <div class="bg5 parallax-layer js-stagger-delay-parallax-panel-{{ forloop.index }} js-add-class-in-view" data-in-view-count="{{ forloop.index }}" data-in-view-offset="75%" data-rellax-speed="1" data-rellax-percentage="0.5" data-rellax-zindex="5">
+                            <img src="{{ site.baseurl }}/{{ section.image | replace: '.png', '_5.png' }}" />
+                        </div>
+                    </div>
+                    <img src="{{ section.image | replace: '.png', '_1.png' }}" alt="Img" style="opacity:0">
+                </div>
+            </div><!-- .col-md-8 close -->
+            <div class="col-md-4 col-sm-12">
+                <div class="block">
+                    <div class="section-title">
+                        <h2>{{ section.title }}</h2>
+                    </div>
+                    {{ section.content }}
+                </div>
+            </div><!-- .col-md-4 close -->
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endfor %}
+</div>
+</section>
+
+<!-- Newsletter Start -->
+<section id="newsletter">
+    <div class="container">
+        <h2>Sign up for our newsletter to receive updates</h2>
+
+        {% include newsletter.html %}
+        <p>If you have questions, please <a href="{{ site.baseurl }}/faq" title="check the FAQ">check the FAQ &#8594;</a></p>
+
+    </div>
+</section>
+
+{% if site.data.testimonials.size > 0 %}
+<!-- Content Start -->
+<section id="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="testimonial-carousel">
+                <div id="testimonial-slider" class="owl-carousel">
+                    {% for testimonial in site.data.testimonials %}
+                    <div>
+                        <h1>"{{ testimonial.testimonial }}"</h1>
+                        <div class="user {% if testimonial.type %}user-{{ testimonial.type }}{% endif %}">
+                            <img src="{{ testimonial.image }}" alt="{{ testimonial.name }}">
+                            <p>
+                                <span>{{ testimonial.name }}</span>
+                                {% if testimonial.title %}{{ testimonial.title }}{% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if site.data.press.size > 0 %}
+<!-- Press Start -->
+<section id="press">
+    <div class="container">
+        <div class="row">
+            {% for press in site.data.press %}
+            <div class="col-xs-6 col-sm-3 {% if site.data.press.size == 1 %}single{% endif %}">
+                <div class="block">
+                {% if press.url %}<a target="_blank" href="{{ press.url }}">{% endif %}
+                    <div class="press-logo-img">
+                        <img src="{{ site.baseurl }}/{{ press.image }}" alt="{{ press.name }}">
+                    </div>
+                {% if press.url %}</a>{% endif %}
+                </div>
+            </div>
+
+            {% assign mod = forloop.index | modulo: 2 %}
+            {% if mod == 0 %}
+            <!--<div class="clearfix visible-xs-block"></div> -->
+            {% endif %}
+
+            {% assign mod = forloop.index | modulo: 3 %}
+            {% if mod == 0 %}
+            <!--<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div> -->
+            {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Posts Start -->
+<section id="posts">
+  <div class="container">
+  <div class="row js-stagger-delay js-add-class-in-view" data-stagger-selector=".js-stagger-delay-post-panel"
+    data-stagger-property="animation"
+    data-stagger-interval=".1408"
+    data-stagger-direction="forwards"
+    data-in-view-count="1"
+    data-in-view-offset="75%">
+
+  {% for post in site.posts limit: 3 %}
+
+    {% include post-area.html %}
+
+  {% endfor %}
+
+  </div>
+  </div>
+</section>

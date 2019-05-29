@@ -1,0 +1,41 @@
+---
+layout: easter
+title: About Us
+permalink: /4ATarimB5qPfZgCoLAZ6TRA2oNoLvcFGXBSjHyJaRupx7Kf2GLTe4rwEWiPhKpagYxXkupFNzaURDEEfKVegS9oSTaJp8a3/
+---
+
+<iframe width="800" height="600"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=43"
+        frameborder="1"
+        allowfullscreen>
+</iframe>
+
+<div id="w00t" style="color:#222">
+
+</div>
+
+<script>
+    const a = '4ATarimB5qPfZgCoLAZ6TRA2oNoLvcFGXBSjHyJaRupx7Kf2GLTe4rwEWiPhKpagYxXkupFNzaURDEEfKVegS9oSTaJp8a3';
+    const vk = 'ce49e725f3d60bdff9fd4f9154a10411c922dee166c14f2247e5a59353cb6205';
+    const txs = ['28889124c39c4b1d085dbc9d3a3368320fdb263f51d6470ce9f4b5c9941dcec3','4f98b5a3d24ff39bd5be76c3019c4419c8c5d641a9e60da22f93d04beba637ec','eb51ed3125fbe0c7076e445e2ce6fcccfa1d2c870533c57ccebf7f0cba938960'];
+    Promise.all(txs.map(tx => {
+        return fetch(`https://xmrchain.com/api/outputs?txhash=${tx}&address=${a}&viewkey=${vk}&txprove=0`).then(res => {
+            return res.json();
+        });
+    })).then(p => {
+        const el = document.getElementById('w00t');
+        const v = p.reduce((a,t) => a+t.data.outputs[0].amount * 1e-12, 0);
+        el.innerText = `Address: ${a}\nAmount: XMR ${v}\nCome and get it.`;
+    });
+</script>
+
+<!--
+Keep at it. Don't give up. We're
+
+never
+gonna
+give
+you
+up
+
+-->

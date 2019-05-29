@@ -1,0 +1,23 @@
+---
+layout: page
+title: Docs
+permalink: /docs/
+---
+
+<!-- Slider Start -->
+<section id="global-header">
+    <div class="container">
+        <h1>Documentation</h1>
+    </div>
+</section>
+
+<!-- Docs Start -->
+    <div class="container">
+
+
+            {% capture docs %}{% include docs.md %}{% endcapture %}
+            {{ docs | markdownify }}
+
+
+    </div>
+
